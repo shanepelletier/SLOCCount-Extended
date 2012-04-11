@@ -1,0 +1,15 @@
+Index: ml_count.c
+===================================================================
+--- ml_count.c	(revision 1)
++++ ml_count.c	(working copy)
+@@ -104,7 +104,9 @@
+ 	 
+    case '\\':
+      /* Ignore next character if in string.  But don't ignore newlines. */
+-     if (in_string && !ispeek('\n', stream))
++     /* Also, eat a " character if it is escaped, so that we don't enter
++      * or exit a string */
++     if ((in_string && !ispeek('\n', stream)) || ispeek('\"', stream))
+        getachar(stream);
+      break;
+    

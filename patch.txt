@@ -1,0 +1,16 @@
+Index: break_filelist
+===================================================================
+--- break_filelist	(revision 1)
++++ break_filelist	(working copy)
+@@ -1279,6 +1279,11 @@
+      print STDERR "Filename is: $file\n";
+      next;
+    }
++   if ($file =~ /.*\/(\.git|\.svn|\.hg)\/.*/) {
++     # File is part of the RCS software
++     # Don't count it, as it is generated automatically
++     next;
++   }
+    $file_type = &get_file_type($file);
+    if ($file_type) {
+      &record_file_type($file, $file_type);
