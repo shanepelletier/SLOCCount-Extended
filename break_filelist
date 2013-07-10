@@ -181,6 +181,7 @@ $noisy = 0;            # Set to 1 if you want noisy reports.
   "lisp" => "lisp", "el" => "lisp", "scm" => "lisp", "sc" => "lisp", 
   "lsp" => "lisp", "cl" => "lisp",
   "jl" => "lisp",
+  "clj" => "lisp",
   "tcl" => "tcl", "tk" => "tcl", "itk" => "tcl",
   "exp" => "exp",
   "pl" => "perl", "pm" => "perl", "perl" => "perl", "ph" => "perl",
